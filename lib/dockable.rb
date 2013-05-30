@@ -1,8 +1,10 @@
 # Understands how to manage a set of bikes
 module Dockable
 
+	DEFAULT_CAPACITY = 10
+
 	def initialize
-		@bikes = []
+		@bikes = []	
 	end
 
 	def empty?
@@ -10,6 +12,7 @@ module Dockable
 	end
 	
 	def dock(bike)
+		#raise "There's no room" if full?
 		@bikes << bike
 	end
 
@@ -25,12 +28,8 @@ module Dockable
 		@bikes.select{|bike| bike.broken?}
 	end
 
-	# def docked?
-	# 	@docked
-	# end
-
-	# def undocked!
-	# 	@docked = false
-	# end
+	def full?
+		@bikes.count == DEFAULT_CAPACITY
+	end
 
 end

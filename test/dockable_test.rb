@@ -40,12 +40,25 @@ class DockableTest < MiniTest::Unit::TestCase
 	end
 
 	def test_broken_bikes
-	working_bike = Bike.new(1)
+		working_bike = Bike.new(1)
 		broken_bike = Bike.new(2)
 		broken_bike.break!
 		@dockable.dock(working_bike)
 		@dockable.dock(broken_bike)
 		assert_equal [broken_bike], @dockable.broken_bikes
-	end		
+	end	
+
+	def test_empty_docking_station
+		assert @dockable.empty?
+	end
+
+	def test_full_docking_station
+		Dockable::DEFAULT_CAPACITY.times do |i|
+			refute @dockable.full?
+			@dockable.dock Bike.new(i)
+		end
+		assert @dockable.full?
+	end
 
 end
+
