@@ -1,0 +1,34 @@
+class Bike
+	broken? X
+	break! X
+	fix! X
+	id X
+
+class Dockable
+	dock(bike) X
+	undock(bike) X
+	id 
+	bikes_count
+	available_bikes (list of class instances) =>[] X
+	broken_bikes =>[] X
+	capacity
+	empty?
+	full?
+	self.all
+
+class DockingStation
+	break(bike)
+	+Dockable
+
+class Van
+	collect(location, [])
+	drop_off(location, [])
+	redistribute!
+	+Dockable
+
+class Garage
+	fix!
+	+Dockable
+
+class Person
+
