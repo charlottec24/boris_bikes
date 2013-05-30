@@ -60,5 +60,21 @@ class DockableTest < MiniTest::Unit::TestCase
 		assert @dockable.full?
 	end
 
+	def test_cant_dock_too_many_bikes
+		assert_raises(RuntimeError) do
+			(Dockable::DEFAULT_CAPACITY + 1).times do |i|
+				@dockable.dock Bike.new(i)
+			end
+		end
+		assert @dockable.full?
+	end
+
+	def test_count_of_bikes
+		Dockable::DEFAULT_CAPACITY.times do |i|
+			@dockable.dock Bike.new(i)	
+		end
+		assert_equal Dockable::DEFAULT_CAPACITY, @dockable.bike_count
+	end
+
 end
 

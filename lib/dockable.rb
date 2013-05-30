@@ -12,7 +12,7 @@ module Dockable
 	end
 	
 	def dock(bike)
-		#raise "There's no room" if full?
+		raise "There's no room" if full?
 		@bikes << bike
 	end
 
@@ -29,7 +29,11 @@ module Dockable
 	end
 
 	def full?
-		@bikes.count == DEFAULT_CAPACITY
+		@bikes.count >= DEFAULT_CAPACITY
+	end
+
+	def bike_count
+		@bikes.count
 	end
 
 end

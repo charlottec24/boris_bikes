@@ -11,9 +11,9 @@ class Dockable
 	bikes_count
 	available_bikes (list of class instances) =>[] X
 	broken_bikes =>[] X
-	capacity
-	empty?
-	full?
+	capacity X
+	empty? X
+	full? X
 	self.all
 
 class DockingStation
