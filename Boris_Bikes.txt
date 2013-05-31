@@ -7,17 +7,18 @@ class Bike
 class Dockable
 	dock(bike) X
 	undock(bike) X
-	id 
-	bikes_count
+	#id 
+	bikes_count X
 	available_bikes (list of class instances) =>[] X
 	broken_bikes =>[] X
+	Can't dock too many bikes X
 	capacity X
 	empty? X
 	full? X
-	self.all
+	#self.all
 
 class DockingStation
-	break(bike)
+	break(bike) X
 	+Dockable
 
 class Van
