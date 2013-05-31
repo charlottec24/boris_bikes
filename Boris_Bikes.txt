@@ -28,7 +28,7 @@ class Van
 	+Dockable
 
 class Garage
-	fix!
+	fix! X
 	+Dockable
 
 class Person
