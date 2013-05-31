@@ -6,7 +6,7 @@ class DockableModule
 	include Dockable
 end
 
-class DockableTest < MiniTest::Unit::TestCase
+class DockableTest < MiniTest::Test
 
 	def setup
 		@bike = Bike.new(1)

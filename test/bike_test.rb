@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require '../lib/bike'
 
-class BikeTest < MiniTest::Unit::TestCase
+class BikeTest < MiniTest::Test
 
 	def test_new_bike_is_not_broken
 		bike = Bike.new(1)
